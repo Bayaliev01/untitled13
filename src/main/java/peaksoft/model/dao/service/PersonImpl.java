@@ -82,18 +82,5 @@ public class PersonImpl implements PersonDao {
             throw new RuntimeException();
         }
     }
-
-    public void assignCarToPerson(Long id, Long personId) {
-        try (Session session = sessionFactory.openSession()) {
-            session.beginTransaction();
-            Car car = session.get(Car.class, id);
-            Person person = session.get(Person.class, personId);
-           car.setPerson(person);
-           person.setCars(List.of(car));
-            session.persist(person);
-        } catch (Exception e) {
-            throw new RuntimeException();
-        }
-    }
 }
 

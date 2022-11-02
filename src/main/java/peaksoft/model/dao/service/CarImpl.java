@@ -58,18 +58,10 @@ public class CarImpl implements CarDao {
     public List<Car> getCarsByPersonName(String name) {
         try (Session session = sessionFactory.openSession()) {
             session.beginTransaction();
-            List<Person> personList = session.createQuery("SELECT p FROM Person p where  p.name=:name")
+            List<Person> personList = session.createQuery("SELECT p FROM Person p where  p.name=:name", Person.class)
                     .setParameter("name",name).list();
 
-            Person person = null;
-            for (Person i : personList) {
-                if (i.getName().equals(name)) {
-                    List<Person> personList2 = session.createQuery
-                                    ("select c from Person c where c.id = :id", Person.class)
-                            .setParameter("id", i.getId()).list();
-                    person = personList2.get(0);
-                }
-            }
+            Person person = personList.get(0);
             List<Car> cars = new ArrayList<>(person.getCars());
             session.getTransaction().commit();
             return cars;

@@ -17,5 +17,4 @@ public interface PersonDao {
 
     Person getPersonByName(String name);
 
-    void assignCarToPerson(Long id, Long personId);
 }

@@ -3,13 +3,13 @@ package peaksoft.model.dao.service;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import peaksoft.db.Util;
-import peaksoft.model.Car;
 import peaksoft.model.Person;
 import peaksoft.model.SocialMedia;
+import peaksoft.model.dao.SocialMediaDao;
 
 import java.util.List;
 
-public class SocialMediaImpl {
+public class SocialMediaImpl implements SocialMediaDao {
     private SessionFactory sessionFactory = Util.creatSessionFactory();
 
     public void saveMedia(SocialMedia socialMedia) {

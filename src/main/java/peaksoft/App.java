@@ -29,9 +29,12 @@ public class App {
 //        personImpl.savePerson(person2);
 //        personImpl.savePerson(person3);
 //        personImpl.savePerson(person4);
-//        personImpl.assignCarToPerson(1l,1l);
+//        personImpl.assignCarToPerson(5l,5l);
 //        personImpl.deletePersonId(1l);
-//        car.assignCarToPerson(2l,2l);
+//        personImpl.deletePersonId(2l);
+//        personImpl.getPersonById(1l);
+//        personImpl.getPersonByName("beka");
+//        personImpl.updatePerson(3l,new Person("janysh","2gmsil.com",23));
 
 
         Car cars = new Car("BMW", 10000000, "Black");
@@ -44,9 +47,16 @@ public class App {
 //        car.saveCar(cars4);
 //        System.out.println(car.getCarsByPersonId(1l));
 //car.deleteCarById(2l);
+//        car.deleteCarById(3l);
+//        car.getCarsByPersonId(2l);
+//        car.getCarsByPersonName("adi");
         SocialMediaImpl socialMedia = new SocialMediaImpl();
         SocialMedia socialMedia1 = new SocialMedia("Instagram");
 //        socialMedia.saveMedia(socialMedia1);
+//        socialMedia.deleteSocialMedia(1l);
+//        System.out.println(socialMedia.getAllMedia());
+//        socialMedia.getSocialMedia(2l);
+
 
     }
 }

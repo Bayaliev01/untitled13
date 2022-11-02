@@ -17,4 +17,7 @@ public interface CarDao {
     List<Car> getAllCars();
 
     void deleteCarById(Long id);
+
+    void assignCarToPerson(Long id, Long personId);
+
 }
